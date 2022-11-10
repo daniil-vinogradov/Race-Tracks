@@ -25,8 +25,8 @@ class Bfs(private val data: Case) {
                 val nextPoint = Point(x = point.x + nextSpeed.x, y = point.y + nextSpeed.y)
                 val nextPointWithSpeed = PointWithSpeed(nextPoint, nextSpeed)
                 if (nextSpeed.x.absoluteValue > MAX_SPEED || nextSpeed.y.absoluteValue > MAX_SPEED
-                    || nextPoint.isObstacle() || nextPoint.isOutOfGrid()
                     || visitedPoints.contains(nextPointWithSpeed)
+                    || nextPoint.isObstacle() || nextPoint.isOutOfGrid()
                 ) continue
                 visitedPoints.add(nextPointWithSpeed)
                 steps.add(BfsStep(nextPointWithSpeed, hopsCount = hopsCount + 1))

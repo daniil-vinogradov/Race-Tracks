@@ -11,6 +11,13 @@ internal class CaseParserTest {
         assertEquals(
             expected = listOf(
                 Case(
+                    gridWidth = 0,
+                    gridHeight = 0,
+                    start = Point(0, 0),
+                    end = Point(0, 0),
+                    obstacles = emptyList()
+                ),
+                Case(
                     gridWidth = 10,
                     gridHeight = 10,
                     start = Point(1, 0),

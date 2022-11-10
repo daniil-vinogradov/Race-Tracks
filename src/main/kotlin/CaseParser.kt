@@ -9,7 +9,8 @@ class CaseParser {
             val gridSizes = lines[caseOffset].split(" ")
             val startAndEndPoints = lines[caseOffset + 1].split(" ")
             val obstaclesSize = lines[caseOffset + 2].toInt()
-            Case(gridWidth = gridSizes[0].toInt(),
+            Case(
+                gridWidth = gridSizes[0].toInt(),
                 gridHeight = gridSizes[1].toInt(),
                 start = Point(startAndEndPoints[0].toInt(), startAndEndPoints[1].toInt()),
                 end = Point(startAndEndPoints[2].toInt(), startAndEndPoints[3].toInt()),
