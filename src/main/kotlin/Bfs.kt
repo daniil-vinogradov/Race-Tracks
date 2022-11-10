@@ -24,7 +24,7 @@ class Bfs(private val data: Case) {
                 val nextSpeed = Point(x = speed.x + i, y = speed.y + j)
                 val nextPoint = Point(x = point.x + nextSpeed.x, y = point.y + nextSpeed.y)
                 val nextPointWithSpeed = PointWithSpeed(nextPoint, nextSpeed)
-                if (nextSpeed.x.absoluteValue > 3 || nextSpeed.y.absoluteValue > 3
+                if (nextSpeed.x.absoluteValue > MAX_SPEED || nextSpeed.y.absoluteValue > MAX_SPEED
                     || nextPoint.isObstacle() || nextPoint.isOutOfGrid()
                     || visitedPoints.contains(nextPointWithSpeed)
                 ) continue
@@ -40,4 +40,8 @@ class Bfs(private val data: Case) {
     }
 
     private fun Point.isOutOfGrid() = x < 0 || x >= data.gridWidth || y < 0 || y >= data.gridHeight
+
+    companion object {
+        private const val MAX_SPEED = 3
+    }
 }
