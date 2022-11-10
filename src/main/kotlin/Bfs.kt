@@ -11,7 +11,7 @@ class Bfs(private val data: Case) {
     fun find(): Result<Int> {
         while (stepsToCompute.isNotEmpty()) {
             val step = stepsToCompute.removeFirst()
-            if (step.pointWithSpeed.point == data.end) return Result.success(step.hopsCount)
+            if (step.point == data.end) return Result.success(step.hopsCount)
             stepsToCompute.addAll(step.calculateNextSteps())
         }
         return Result.failure(NoSolution())
